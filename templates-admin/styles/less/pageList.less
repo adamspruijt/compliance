@@ -1,0 +1,181 @@
+.PageList{
+	// border-bottom: 1px solid @grayLighter;
+}
+.PageListRoot{
+	// padding: 1em;
+}
+.PageListPage{
+	color: @gray;
+	background: transparent!important;
+}
+.PageListNumChildren{
+	float: right;
+	font-size: 1.2em;
+	padding: 0!important;
+	.button();
+	margin: -0.35em 0 0 0!important;
+
+	// height: 1.4em;
+	text-align: center;
+	line-height: 1.6em;
+	min-width: 1.6em;
+	.border-radius(12px);
+}
+.PageListNumChildren:empty{
+	display: none!important;
+}
+.PageListItem{
+	text-transform: uppercase;
+	// background: #fff;
+	padding: 0.6em 0 0.6em 2em!important;
+	background: url(./images/icon_page_50.png) 0 0.4em no-repeat;
+	margin: 0!important;
+	border-top: 1px solid #fff!important;
+	border-bottom: 1px solid #eee;
+}
+.PageListItem.PageListItemOpen {
+	background-image: url(images/icon_page.png);
+}
+.PageListItem.PageListStatusSystem {
+	background-image: url(images/icon_menu.png);
+}
+.PageListItem.PageListStatusLocked {
+	background-image: url(images/icon_lock.png);
+}
+// home
+.PageListItem.PageListID1 {
+	background-image: url(images/icon_home.png);
+}
+// trash
+.PageListItem.PageListID7 {
+	background-image: url(images/icon_trash.png);
+}
+// admin/setup
+.PageListItem.PageListID22 {
+	background-image: url(images/icon_gear.png);
+}
+// admin/profile
+.PageListItem.PageListID304 {
+	background-image: url(images/icon_user.png);
+}
+// admin/access
+.PageListItem.PageListID28 {
+	background-image: url(images/icon_key.png);
+}
+
+.PageList .PageListAccessOff a.PageListPage, .PageList .PageListAccessOff a.PageListPage:hover {
+padding-right: 10px;
+background: url(images/icon_lock_tiny.gif) center right no-repeat!important;
+}
+.PageList .PageListID7 a.PageListPage, .PageList .PageListID7 a.PageListPage:hover, .PageList .PageListID7 + .PageList a.PageListPage, .PageList .PageListID7 + .PageList a.PageListPage:hover {
+padding-right: 0;
+background: none!important;
+}
+
+.PageListRoot .PageListSortPlaceholder{
+	background: @grayLightest;
+	border: none;
+	border-bottom: 1px dashed @grayLight;
+	background: transparent;
+	height: 0px;
+	position: relative;
+	margin: -1px 0 0 0;
+	width: auto!important;
+}
+.PageListSortPlaceholder:before{
+	content: '';
+		border-top: 6px solid transparent;
+	border-bottom: 6px solid transparent;
+
+	border-left: 6px solid @adminAccentLight;
+	position: absolute;
+	left: -5px;
+	top: -6px;
+}
+
+.PageListItem:hover{
+	// border-bottom-color: @adminAccentLight;
+}
+.PageListItemOpen{
+	.PageListPage{
+		color: @adminAccent;
+	}
+	.PageListNumChildren{
+		.buttonOn();
+	}
+}
+
+
+.PageListActions{
+	margin: 0 0 0 0.5em!important;
+	li{
+		border: none!important;
+		a{
+			text-transform: uppercase;
+			font-size: 11px;
+			padding: 0.2em 0.6em!important;
+			margin: 0 0.4em 0 0;
+			.button();
+		}
+		a:hover{
+			.buttonHover();
+		}
+	}
+
+}
+
+.PageList .PageListStatusHidden a.PageListPage {
+	color: @grayLight;
+}
+
+.PageListPagination, .MarkupPagerNav{
+	font-size: 0.9em!important;
+	line-height: 1.8em;
+
+	li{
+		a{
+			color: @gray!important;
+			background: transparent!important;
+			padding: 0.2em 0.4em!important;
+		}
+	}
+	li.MarkupPagerNavOn, li.PageListPaginationCurrent{
+		a{
+			color: @adminAccentDark!important;
+		}
+	}
+	// border-top: 1px solid @grayLighter;
+	border-bottom: 1px solid @grayLightest;
+	a{
+		font-weight: bold;
+	}
+}
+
+.PageListActions .PageListActionMore{
+	clear: both;
+	display: block!important;
+	padding: 0!important;
+	border: none;
+	border-bottom: 1px solid @grayLightest;
+	a{
+		// float: right;
+		display: block;
+
+
+	}
+}
+.PageListSortItem{
+	.button();
+	width: auto;
+	padding: .6em!important;
+}
+
+.PageListMoveNote a{
+	.border-radius(4px);
+	margin:-0.2em 0;
+	float: right;
+	.buttonCancel();
+
+	font-size: 11px!important;
+	padding: 0.2em 0.6em!important;
+}

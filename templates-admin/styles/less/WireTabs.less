@@ -1,0 +1,30 @@
+.WireTabs{
+	margin: -@innerPadding -@innerPadding 0 -@innerPadding!important;
+	position: static!important;
+	padding: 1.6em @innerPadding;
+	background: #eeeeee;
+	list-style: none!important;
+	border-bottom: 1px solid #e0e0e0;
+	li{
+		background: transparent!important;
+		line-height: 3em;
+		padding: 0 0.5em 0 0!important;
+	}
+	em{
+		border: none!important;
+		font-weight: 100!important;
+	}
+	a{
+		text-transform: uppercase;
+		.button();
+		font-size: 1em;
+		padding: 0.6em 0.9em;
+
+	}
+	a:hover{
+		.buttonHover();
+	}
+	a.on{
+		.buttonOn();
+	}
+}

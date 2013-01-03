@@ -1,0 +1,73 @@
+body{
+	background: @grayDark;
+	font-family: Arial;
+	font-size: 12px;
+	line-height: 1.5em;
+	font-weight: 100;
+	-webkit-font-smoothing: antialiased;
+}
+
+h1, h2{
+	font-size: 2em;
+	line-height: 3em;
+	color: @gray;
+	text-transform: uppercase;
+}
+h1{
+	color: @grayLightest;
+}
+h2{
+	line-height: 2em;
+}
+
+ a{
+ 	color: @adminAccentDark;
+ }
+ a:hover{
+ 	color: @adminAccentDarker;
+ 	// text-decoration: underline;
+ }
+
+
+ .description{
+ 	color: @grayLight;
+ 	padding: 0 0 1em 0;
+ }
+
+dt{
+	margin: 1em 0 0 0;
+}
+dd{
+	color: @gray;
+	padding: 0.3em 0;
+}
+
+
+
+table {
+	margin-top: 0.5em;
+	margin-bottom: 2em;
+}
+table.AdminDataList tr th{
+	font-size: 0.9em;
+	border-bottom: 1px dashed @grayLighter;
+	border-bottom: 1px solid @grayLighter;
+}
+table.AdminDataList tr td{
+	border-bottom: 1px solid @grayLightest;
+}
+table.AdminDataList tr:hover td{
+	border-color: @adminAccent;
+}
+
+.action,
+.label{
+	text-transform: uppercase;
+}
+
+.notes{
+	color: @notice;
+	display: block;
+	font-size: 0.9em;
+	margin: 0.3em 0 0.6em 0;
+}

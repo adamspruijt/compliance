@@ -1,0 +1,176 @@
+h1,
+.user-menu a{
+	text-shadow: 0  0 3px #000;
+}
+
+.search-box{
+	float: right;
+}
+#ProcessPageSearchQuery{
+	padding: 0.4em 1em;
+	border: none;
+	margin: 0.3em 0;
+	color: #fff;
+	outline: none;
+	opacity: 1!important;
+	text-align: right;
+	line-height: 1em;
+	width: 200px;
+	font-size: 12px;
+
+/* Search: */
+
+border-radius: 13px;
+
+background: #0067a5;
+.box-shadow(0px 0px 1px rgba(255,255,255,0.15));
+.box-shadow(inset 0px 0px 3px rgba(0,0,0,0.37));
+
+}
+#ProcessPageSearchQuery:focus{
+	border-color: #fff;
+	background: #fff;
+	color: @gray;
+	.box-shadow( 0 0 6px rgba(0,0,0,.3));
+}
+
+
+.ui-button{
+	padding: 0.5em 0.8em;
+	text-transform: uppercase;
+	.button();
+}
+.ui-button.ui-state-default{
+	// background: @grayDark;
+	// color: #fff;
+}
+.ui-button.ui-state-hover{
+	.buttonHover();
+}
+.ui-button.ui-state-active{
+	.buttonOn();
+}
+
+.view-site{
+	float: right;
+	a{
+		.button();
+		padding: 0 1em!important;
+		margin: 0.3em 0 0 0.8em;
+		display: block;
+		line-height: 1.9em;
+		border-color: #eee!important;
+		.box-shadow(0 0 6px rgba(0,0,0,0.2));
+	}
+	a:hover{
+		color: @adminAccent;
+		.box-shadow(0 0 6px rgba(0,0,0,0.6));
+		text-shadow: 1px 1px 1px #fff;
+	}
+}
+
+// delete colors
+.PageListMoveNote a,
+#_WireTabDelete{
+	color: @error;
+}
+#_WireTabDelete.on{
+	border-color: @error!important;
+}
+#_WireTabDelete:hover{
+	color: @errorDark;
+}
+
+.fright{
+	float: right;
+}
+
+.fleft{
+	float: left;
+}
+
+.align_left {
+	float: left;
+	margin: 0 1em 0.5em 0;
+}
+
+.align_right {
+	float: right;
+	margin: 0 0 0.5em 1em;
+}
+
+.align_center {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+
+body.modal{
+	.footer,
+	.page-header{
+		display: none!important;
+	}
+}
+
+// ---------------------------------------------------------------------------------
+// overrides ---------------------------------------------------------------------------------
+// ---------------------------------------------------------------------------------
+
+table.AdminDataList tr td:first-child a{
+	font-weight: 100!important;
+	color: @adminAccentDark;
+}
+
+table.AdminDataList td span.ui-icon{
+	bottom: auto!important;
+}
+
+.login-body{
+	.container{
+		max-width: 310px;
+	}
+
+	ul.Inputfields #login_name, ul.Inputfields #login_pass {
+	width: 100%;
+	}
+}
+
+#notices{
+	li{
+		background: transparent!important;
+		border: none!important;
+	}
+}
+
+#submit_publish,
+#submit_save,
+#Inputfield_submit{
+	.buttonGo();
+	float: right;
+}
+#submit_publish:hover,
+#submit_save:hover,
+#Inputfield_submit:hover{
+	.buttonGoHover();
+	float: right;
+}
+
+#_ProcessPageEditDelete.on,
+#_WireTabDelete.on{
+	.buttonCancelOn();
+}
+
+#_ProcessPageEditDelete{
+
+}
+
+// unpublished notice (probably used for other things aswell)
+.inner > h2{
+	position: absolute;
+	font-size: 16px;
+	color: @grayLight;
+	top: 1.4em;
+	text-shadow: 1px 1px 1px #fff;
+	right: 1.9em;
+}
