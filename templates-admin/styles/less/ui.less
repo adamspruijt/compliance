@@ -22,16 +22,56 @@
     padding: 0!important;
 }
 
+
 /*label.ui-widget-header + div.ui-widget-content {
 
 	border-top: none;
 }*/
-
-
-.ui-dialog .ui-dialog-content {
-	padding: 0;
+.ui-button-text-only .ui-button-text{
+    padding: 0!important;
 }
 
+.ui-dialog {
+   background: #eee!important;
+   .border-radius(8px);
+   padding: 0!important;
+   overflow: hidden;
+}
+.ui-dialog-buttonpane,
+.ui-dialog-titlebar{
+    margin: 0!important;
+    // .border-radius(8px 8px 0 0)!important;
+    padding: 1em @innerPadding!important;
+    background: transparent!important;
+    list-style: none!important;
+    border: none;
+    border-bottom: 1px solid #e0e0e0;
+}
+.ui-dialog-title{
+    line-height: 2em;
+    font-size: 16px;
+    margin-top: 0.5em;
+    color: @grayLight;
+    text-transform: uppercase;
+    text-shadow: 1px 1px 1px #fff;
+}
+.ui-dialog-titlebar-close{
+    .border-radius(8px);
+    overflow: hidden;
+}
+.ui-dialog .ui-dialog-content {
+	padding: 0;
+    display: block!important;
+    border-top: 1px solid #fff!important;
+
+    border-bottom: 1px solid #e0e0e0;
+}
+.ui-dialog-buttonpane{
+    margin: 0;
+    border: none!important;
+    border-top: 1px solid #fff!important;
+
+}
 .ui-widget-overlay {
 	background: #000;
 }
@@ -119,16 +159,33 @@
                         border: none;
                 }
 
-.Inputfields {
+.Inputfields .Inputfield{
         .ui-slider{
-                border-right: 4px solid #00d2ff;
-                border-left: 4px solid #f90;
+                .border-radius(4px);
+                padding: 0!important;
+                .button();
+                overflow: visible!important;
+                .ui-slider-range{
+                    .buttonOn();
+                    .border-radius(5px);
+                    margin: -1px!important;
+                    padding: 0;
+                }
         }
 
-        .ui-slider-handle{ .border-radius(8px); padding: 1px!important; outline: none;}
-        .ui-state-default.ui-slider-handle{ background: #1b1b1b; border: none;}
-        .ui-state-hover.ui-slider-handle{ background: #525252;}
-        .ui-slider .ui-slider-range.ui-widget-header{background: #d7d7d7!important; padding: 0!important;}
+        .ui-state-default.ui-slider-handle{
+            .button();
+            .border-radius(8px);
+            width: 1.1em;
+            padding: 1px;
+            border-color: #bbb!important;
+            .box-shadow(0 0 4px rgba(0,0,0,.3));
+            outline: none;
+        }
+        .ui-state-active.ui-slider-handle,
+        .ui-state-hover.ui-slider-handle{
+            .buttonHover();
+        }
 }
 #columnWidth{
         width: 8%;
@@ -137,5 +194,6 @@
 }
 #columnWidthSlider{
         width: 85%!important;
+        top: 6px!important;
         float: right!important;
 }
