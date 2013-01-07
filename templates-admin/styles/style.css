@@ -626,18 +626,22 @@ textarea {
 .InputfieldForm {
   margin: 0;
 }
+.InputfieldForm > .InputfieldFieldsetTabOpen,
 .InputfieldForm > .InputfieldWrapper {
   padding: 1.5em 1.3em 0 1.3em;
   margin: 0 -1.3em;
   *zoom: 1;
   border-top: 1px solid #fff;
 }
+.InputfieldForm > .InputfieldFieldsetTabOpen:before,
 .InputfieldForm > .InputfieldWrapper:before,
+.InputfieldForm > .InputfieldFieldsetTabOpen:after,
 .InputfieldForm > .InputfieldWrapper:after {
   display: table;
   content: "";
   line-height: 0;
 }
+.InputfieldForm > .InputfieldFieldsetTabOpen:after,
 .InputfieldForm > .InputfieldWrapper:after {
   clear: both;
 }
