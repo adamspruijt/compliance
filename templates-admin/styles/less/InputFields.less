@@ -227,6 +227,35 @@ textarea{
  *
  */
 
+.InputfieldPageAutocomplete{
+	.InputfieldPageAutocompleteStatus{
+		margin: 4px;
+	}
+	.ui-autocomplete-input{
+		padding-left: 24px!important;
+	}
+}
+.ui-autocomplete.ui-menu{
+	.box-shadow(0 0 5px rgba(0,0,0,.5));
+	margin: 0 1px;
+	border: none!important;
+	a{
+		position: relative;
+		padding-left: 12px;
+	}
+	a.ui-state-focus:before{
+		content: '';
+			border-top: 6px solid transparent;
+		border-bottom: 6px solid transparent;
+
+		border-left: 6px solid @gray;
+		position: absolute;
+		left: -2px;
+		top: 50%;
+		margin: -6px 0 0 0;
+	}
+}
+
 .Inputfields .InputfieldHidden {
 	display: none;
 }
@@ -356,4 +385,10 @@ textarea{
 	.Inputfield.InputfieldButton {
 		.box-shadow(none);
 	}
+}
+.InputfieldWrapper h2:first-child{
+	margin-top: 0;
+} 
+h2 + .Inputfields{
+	margin-top: 1.4em;
 }
