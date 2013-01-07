@@ -13,16 +13,21 @@ select,
 textarea{
 	max-width: 100%;
 	.box-sizing(border-box);
+
 }
 
 .Inputfields fieldset,
 .Inputfields input,
 .Inputfields select,
-.Inputfields textarea,
-.Inputfields label {
+.Inputfields textarea{
 	/* reset */
 	margin: 0;
 	padding: 4px;
+	vertical-align: text-top;
+}
+.Inputfields select{
+	/* reset */
+	height: 24px;
 }
 
 
@@ -40,8 +45,8 @@ textarea{
 .Inputfields textarea:focus {
 	/* reset */
 	outline: none;
-	border-color: @adminAccent;
-	.box-shadow( 0 0 3px @adminAccent);
+	border-color: @adminAccentLight;
+	.box-shadow( 0 0 3px @adminAccentLight);
 	background: #fff;
 }
 
@@ -60,7 +65,7 @@ textarea{
 	margin: 0;
 }
 .InputfieldForm > .InputfieldWrapper{
-	padding: 1.5em @innerPadding;
+	padding: 1.5em @innerPadding 0 @innerPadding;
 	margin: 0 -@innerPadding;
 	.clearfix();
 	border-top: 1px solid #fff;
@@ -74,9 +79,9 @@ textarea{
 
 .InputfieldForm .Inputfields > .Inputfield {
 	.box-shadow(0 0 4px rgba(0,0,0,0.07));
-	border: 1px solid #ddd;
+	// border: 1px solid #ddd;
 	.border-radius(4px);
-	overflow: hidden;
+	// overflow: hidden;
 }
 	.InputfieldForm .Inputfields .Inputfields {
 		/* nested .Inputfields list needs no bottom margin since it'll already be offset from the parent's padding */
@@ -89,11 +94,14 @@ textarea{
 		margin: 1em 0;
 	}
 
-.Inputfields > .Inputfield > .ui-widget-content {
+.Inputfields > .Inputfield  .ui-widget-content {
 	/* the Inputfield's content, padded from the borders */
 	// padding: 1em 0;
 	padding: 1em;
-	border-top: 1px solid #ddd!important;
+	border: 1px solid #ddd;
+	.border-radius(0 0 4px 4px);
+	overflow: hidden;
+	border-top: none!important;
 }
 
 .Inputfields .ui-widget-header {
@@ -104,8 +112,12 @@ textarea{
 	-moz-user-select: none;
 	-o-user-select: none;
 	user-select: none; /* prevent selection of this element */
-	border: 1px solid #fff;
+	border: 1px solid #ddd;
 	.gradientV(#fff, #eee);
+	text-transform: uppercase;
+	.border-radius(4px 4px 0 0);
+	text-shadow: 1px 1px 1px #fff;
+	font-weight: bold;
 }
 
 .Inputfields label {
@@ -168,6 +180,11 @@ textarea{
 .Inputfields .InputfieldStateToggle {
 	cursor: pointer;
 }
+.Inputfields .InputfieldStateToggle:hover {
+	/* when hovering, they are no longer faded */
+	opacity: 1.0;
+	color: @adminAccent;
+}
 	.Inputfields .InputfieldStateToggle span.ui-icon {
 		/* the open/close icon that goes with most Inputfields */
 		float: right;
@@ -176,6 +193,8 @@ textarea{
 
 	.Inputfields > .InputfieldStateCollapsed .ui-widget-header {
 		/* collapsed Inputfields appear sightly faded */
+		.border-radius(4px);
+		border-color: #ccc;
 		opacity: 0.6;
 	}
 	.Inputfields > .InputfieldStateCollapsed .ui-widget-header:hover {
@@ -211,7 +230,55 @@ textarea{
 .Inputfields .InputfieldHidden {
 	display: none;
 }
+.InputfieldFileDelete{
+	margin: 0 0.3em;
+}
+.InputfieldFile{
+	.border-radius(4px);
+	.InputfieldFileInfo{
+		white-space: nowrap;
+		overflow: hidden;
+		text-overflow:ellipsis;
+	}
+	.ui-widget-header.ui-state-error{
+		.border-radius(4px);
+	}
+}
 
+.InputfieldFileUpload{
+	input{
+		border: none;
+		text-shadow: none;
+		background: transparent;
+		.box-shadow(none);
+		padding: 0;
+	}
+	.InputfieldFileValidExtensions.detail{
+		font-size: 0.9em;
+		color: @grayLight;
+		padding-top: 1em;
+		float: right;
+	}
+	.AjaxUploadDropHere{
+		position: static!important;
+		opacity: 1!important;
+		float: left;
+		display: block!important;
+		padding-top: 1em;
+	}
+}
+.ui-state-hover{
+	.InputfieldFileUpload{
+		.AjaxUploadDropHere,
+		input{
+		color: @notice!important;
+
+		}
+	}
+}
+.InputfieldCheckboxesStacked label{
+	margin-bottom: 0.2em;
+}
 /**
  * Buttons
  *
@@ -271,14 +338,21 @@ textarea{
 .InputfieldRenderValueMode .InputfieldSubmit,
 .InputfieldRenderValueMode .InputfieldButton {
 	display: none;
+
+
+
 }
-.ui-widget-header,
-.ui-widget-content{
-	border: none!important;
-}
+
+// .ui-widget-header,
+// .ui-widget-content{
+// 	border: none!important;
+// }
 
 
 
 .Inputfields{
-	margin-bottom: 2em!important;
+	.Inputfield.InputfieldSubmit,
+	.Inputfield.InputfieldButton {
+		.box-shadow(none);
+	}
 }

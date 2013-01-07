@@ -18,7 +18,13 @@ h1{
 }
 h2{
 	line-height: 2em;
+	font-size: 16px;
+	margin-top: 0.5em;
+	color: @grayLight;
+	text-shadow: 1px 1px 1px #fff;
 }
+
+
 
  a{
  	color: @adminAccentDark;
@@ -35,11 +41,11 @@ h2{
  }
 
 dt{
-	margin: 1em 0 0 0;
+	margin: 0.2em 0 0 0;
 }
 dd{
 	color: @gray;
-	padding: 0.3em 0;
+	padding: 0 0 1em 0;
 }
 
 
@@ -54,20 +60,25 @@ table.AdminDataList tr th{
 	border-bottom: 1px solid @grayLighter;
 }
 table.AdminDataList tr td{
-	border-bottom: 1px solid @grayLightest;
+	border-bottom: 1px solid lighten(@grayLighter, 7%);
+	padding: 4px;
 }
 table.AdminDataList tr:hover td{
-	border-color: @adminAccent;
+	background: #fff!important;
+	border-color: @grayLighter;
 }
 
-.action,
-.label{
+.action{
 	text-transform: uppercase;
 }
 
 .notes{
-	color: @notice;
+	background: lighten(@notice, 45%);
+	color: darken(@notice, 20%);
 	display: block;
 	font-size: 0.9em;
-	margin: 0.3em 0 0.6em 0;
+	margin: 0.7em 0;
+	padding: 0.4em 0.7em;
+	border: 1px solid lighten(@notice, 40%);
+	.border-radius(2px);
 }

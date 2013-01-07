@@ -35,16 +35,14 @@ background: #0067a5;
 }
 
 
-.ui-button{
+.ui-button,
+.ui-button.ui-state-default{
 	padding: 0.5em 0.8em;
 	text-transform: uppercase;
 	.button();
 }
-.ui-button.ui-state-default{
-	// background: @grayDark;
-	// color: #fff;
-}
 .ui-button.ui-state-hover{
+	.button();
 	.buttonHover();
 }
 .ui-button.ui-state-active{
@@ -107,9 +105,17 @@ background: #0067a5;
 
 
 body.modal{
+	background: @grayLightest;
 	.footer,
 	.page-header{
 		display: none!important;
+	}
+	.container{
+		padding: 0;
+		.inner{
+			.border-radius(0);
+			.box-shadow(none);
+		}
 	}
 }
 
@@ -126,23 +132,67 @@ table.AdminDataList td span.ui-icon{
 	bottom: auto!important;
 }
 
-.login-body{
-	.container{
-		max-width: 310px;
-	}
-
-	ul.Inputfields #login_name, ul.Inputfields #login_pass {
-	width: 100%;
-	}
-}
 
 #notices{
+	padding: 0 0 1.5em 0;
+	.ui-icon{
+		margin-right: 0.3em;
+	}
 	li{
 		background: transparent!important;
 		border: none!important;
+		text-shadow: 1px 1px 1px #000;
+	}
+	li.NoticeMessage.ui-state-highlight{
+		color: @successLight;
+	}
+	li.NoticeWarning.ui-state-highlight{
+		color: @notice;
+	}
+	li.NoticeError.ui-state-highlight{
+		color: @errorLight;
 	}
 }
+.login-body{
+	#notices,
+	.copy{
+		position: fixed;
 
+	}
+	#notices{
+		bottom: 0em;
+		left: 2em;
+	}
+	.copy{
+		right: 2em;
+		bottom: 1.3em;
+	}
+	.page-header{
+		position: absolute;
+		top: 50%;
+		margin: -230px 0 0 0;
+		text-align: center;
+		width: 100%;
+
+		h1{
+			font-size: 3em;
+			color: #555;
+		}
+	}
+	.content{
+		height: 300px;
+		width: 300px;
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		margin: -150px 0 0 -150px;
+	}
+	.Inputfield,
+	ul.Inputfields #login_name,
+	ul.Inputfields #login_pass {
+		width: 100%!important;
+	}
+}
 #submit_publish,
 #submit_save,
 #Inputfield_submit{
@@ -165,12 +215,9 @@ table.AdminDataList td span.ui-icon{
 
 }
 
-// unpublished notice (probably used for other things aswell)
-.inner > h2{
-	position: absolute;
-	font-size: 16px;
-	color: @grayLight;
-	top: 1.4em;
-	text-shadow: 1px 1px 1px #fff;
-	right: 1.9em;
+#debug{
+	.container{
+		padding: 0;
+	}
+	text-shadow: none;
 }

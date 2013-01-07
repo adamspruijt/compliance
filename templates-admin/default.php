@@ -67,6 +67,7 @@ if(!$browserTitle) $browserTitle = __(strip_tags($page->get('title|name')), __FI
 </head>
 <body class="<?php if($bodyClass) echo $bodyClass; if ($user->isGuest()) echo 'login-body'?>">
 	<div class='page-header'>
+		<?php if (!$user->isGuest()): ?>
 		<div class="nav-wrapper">
 			<div class="nav-bar">
 				<div class="container">
@@ -80,7 +81,6 @@ if(!$browserTitle) $browserTitle = __(strip_tags($page->get('title|name')), __FI
 				</div>
 			</div>
 		</div>
-
 		<div class="nav-bread">
 			<div class="container">
 				<ul id='breadcrumb' class='nav-menu'><?php
@@ -108,6 +108,9 @@ if(!$browserTitle) $browserTitle = __(strip_tags($page->get('title|name')), __FI
 				</ul>
 			</div>
 		</div>
+
+		<?php endif ?>
+
 
 		<div class="container">
 
@@ -153,7 +156,10 @@ if(!$browserTitle) $browserTitle = __(strip_tags($page->get('title|name')), __FI
 
 
 	<div class="footer container">
-		ProcessWire <?php echo $config->version . ' <!--v' . $config->systemVersion; ?>--> &copy; <?php echo date("Y"); ?> Ryan Cramer
+		<p class="copy">
+			ProcessWire <?php echo $config->version . ' <!--v' . $config->systemVersion; ?>--> &copy; <?php echo date("Y"); ?> Ryan Cramer
+
+		</p>
 		<?php if($config->debug && $this->user->isSuperuser()) include($config->paths->adminTemplates . "debug.inc"); ?>
 	</div>
 
