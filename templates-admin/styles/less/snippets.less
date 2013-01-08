@@ -41,7 +41,7 @@
   color: #fff;
   text-shadow:    1px 1px 1px rgba(0,0,0,0.3);
 
-  background: @error;
+  background: @error!important;
   border-color: @errorDark!important;
   .box-shadow(inset 0 0 5px @errorDark);
 
@@ -52,7 +52,7 @@
   color: #fff!important;
   text-shadow: -1px -1px 1px rgba(0,0,0,0.3);
 
-  .gradientV(@success,@successDark);
+  .gradientV(@success,@successDark)!important;
   border: 1px solid @successDark!important;
   .box-shadow(0 0 1px #fff)!important;
 
@@ -60,7 +60,7 @@
 .buttonGoHover(){
   color: #fff!important;
   text-shadow: -1px -1px 1px rgba(0,0,0,0.3);
-  .gradientV(@successDark,@successDarker);
+  .gradientV(@successDark,@successDarker)!important;
   border: 1px solid @successDarker!important;
   .box-shadow(0 0 6px @successDark)!important;
 
