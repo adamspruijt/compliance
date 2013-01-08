@@ -108,7 +108,7 @@ background: #0067a5;
 	margin-right: auto;
 }
 
-body.modal{
+body.modal.modalNoMod{
 	background: @grayLightest;
 	.footer,
 	.page-header{
@@ -120,6 +120,13 @@ body.modal{
 			.border-radius(0);
 			.box-shadow(none);
 		}
+	}
+}
+body.modal.modalMod{
+	.nav-wrapper,
+	.footer p,
+	.nav-bread{
+		display: none!important;
 	}
 }
 
@@ -166,10 +173,15 @@ table.AdminDataList td span.ui-icon{
 	#notices{
 		bottom: 0em;
 		left: 2em;
+		width: 100%;
+		li{
+		text-align: left;
+
+		}
 	}
 	.copy{
 		right: 2em;
-		bottom: 1.3em;
+		bottom: 1.6em;
 	}
 	.page-header{
 		position: absolute;
@@ -179,7 +191,7 @@ table.AdminDataList td span.ui-icon{
 		width: 100%;
 
 		h1{
-			font-size: 3em;
+			font-size: 2.3em;
 			color: #555;
 		}
 	}

@@ -93,23 +93,39 @@
  */
 .ui-tooltip {
 	z-index: 100;
-	border-bottom: 2px solid @adminAccent;
+	border-bottom: 1px solid #fff!important;
 	padding: 0.6em 1em;
 	background: #fff;
-	.box-shadow( 0 0 5px rgba(0,0,0,.2));
+    .border-radius(4px);
+	.box-shadow( 0 0 6px rgba(0,0,0,.3));
 }
 
+.ui-tooltip:before {
+    content: "";
+    position: absolute!important;
+    left: 50%;
+    top: 100%;
+    margin: 1px 0 0 -6px;
+    width: 0;
+    z-index: 0;
+
+    height: 0;
+    border-style: solid;
+    border-width: 6px 6px 0 6px;
+    border-color: #fff transparent transparent transparent;
+}
 .ui-tooltip:after {
 	content: "";
 	position: absolute!important;
 	left: 50%;
 	top: 100%;
-	margin: 0 0 0 -8px;
+	margin: 1px 0 0 -7px;
 	width: 0;
+    z-index: -1;
 	height: 0;
 	border-style: solid;
-	border-width: 8px 8px 0 8px;
-	border-color: @adminAccent transparent transparent transparent;
+	border-width: 7px 7px 0 7px;
+	border-color: @grayLighter transparent transparent transparent;
 }
 
 /***********************************************************************************************

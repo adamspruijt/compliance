@@ -59,13 +59,15 @@ if(!$browserTitle) $browserTitle = __(strip_tags($page->get('title|name')), __FI
 			'templates' => $config->urls->templates,
 			'adminTemplates' => $config->urls->adminTemplates,
 			);
+		$modalMod = ($input->get->ab==1 ? ' modalMod' : ' modalNoMod');
 		?>
 		var config = <?php echo json_encode($jsConfig); ?>;
 	</script>
 	<?php foreach($config->styles->unique() as $file) echo "\n\t<link type='text/css' href='$file' rel='stylesheet' />"; ?>
 	<?php foreach($config->scripts->unique() as $file) echo "\n\t<script type='text/javascript' src='$file'></script>"; ?>
 </head>
-<body class="<?php if($bodyClass) echo $bodyClass; if ($user->isGuest()) echo 'login-body'?>">
+
+<body class="<?php if($bodyClass) echo $bodyClass; if ($user->isGuest()) echo 'login-body'; echo $modalMod;?>">
 	<div class='page-header'>
 		<?php if (!$user->isGuest()): ?>
 		<div class="nav-wrapper">
@@ -89,6 +91,7 @@ if(!$browserTitle) $browserTitle = __(strip_tags($page->get('title|name')), __FI
 						echo "\n\t\t\t\t<li><a href='{$breadcrumb->url}'>{$title} <span>&rsaquo;</span></a> </li>";
 					}
 					?>
+
 			<?php if(!$user->isGuest()): ?>
 				<li class="fright"><a class='action' href='<?php echo $config->urls->admin; ?>login/logout/'><?php echo __('logout', __FILE__); ?></a></li>
 

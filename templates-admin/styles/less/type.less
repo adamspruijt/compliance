@@ -1,5 +1,8 @@
+html, body{
+	background: @grayDark!important;
+}
 body{
-	background: @grayDark;
+
 	font-family: Arial;
 	font-size: 12px;
 	line-height: 1.5em;
@@ -16,7 +19,7 @@ h1, h2{
 h1{
 	color: @grayLightest;
 }
-h2{
+h2, dt{
 	line-height: 2em;
 	font-size: 16px;
 	margin-top: 0.5em;
@@ -42,10 +45,13 @@ h2{
 
 dt{
 	margin: 0.2em 0 0 0;
+	line-height: 1.7em;
+	border-bottom: 1px solid #e0e0e0;
 }
 dd{
 	color: @gray;
-	padding: 0 0 1em 0;
+	border-top: 1px solid #fff;
+	padding: 0.4em 0 1em 0;
 }
 
 

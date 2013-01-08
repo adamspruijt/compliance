@@ -25,9 +25,9 @@ textarea{
 	padding: 4px;
 	vertical-align: text-top;
 }
-.Inputfields select{
+.Inputfields .InputfieldSelect select{
 	/* reset */
-	height: 24px;
+	height: 2.1em;
 }
 
 
@@ -99,7 +99,7 @@ textarea{
 	/* the Inputfield's content, padded from the borders */
 	// padding: 1em 0;
 	padding: 1em;
-	border: 1px solid #ddd;
+	border: 1px solid darken(#ddd, 2%);
 	.border-radius(0 0 4px 4px);
 	overflow: hidden;
 	border-top: none!important;
@@ -113,7 +113,7 @@ textarea{
 	-moz-user-select: none;
 	-o-user-select: none;
 	user-select: none; /* prevent selection of this element */
-	border: 1px solid #ddd;
+	border: 1px solid darken(#ddd, 2%);
 	.gradientV(#fff, #eee);
 	text-transform: uppercase;
 	.border-radius(4px 4px 0 0);
@@ -389,7 +389,7 @@ textarea{
 }
 .InputfieldWrapper h2:first-child{
 	margin-top: 0;
-} 
+}
 h2 + .Inputfields{
 	margin-top: 1.4em;
 }
