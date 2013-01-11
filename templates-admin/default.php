@@ -19,8 +19,8 @@ $config->scripts->append($config->urls->adminTemplates . "scripts/main.js?v=2");
 
 $browserTitle = wire('processBrowserTitle');
 if(!$browserTitle) $browserTitle = __(strip_tags($page->get('title|name')), __FILE__) . ' &bull; ProcessWire';
-
-$modalMod = ($input->get->ab==1 ? ' modalMod' : ' modalNoMod');
+if ($input->get->modal==1) {
+	$modalMod = ($input->get->ab==1 ? ' modalMod' : ' modalNoMod');}
 
 /*
  * Dynamic phrases that we want to be automatically translated
