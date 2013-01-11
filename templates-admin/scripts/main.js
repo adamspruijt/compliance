@@ -126,7 +126,7 @@ var ProcessWireAdminTheme = {
 $(document).ready(function() {
 	ProcessWireAdminTheme.init();
 
-	// $("#submit_save, #submit_save_unpublished, #submit_publish, #Inputfield_submit").clone().appendTo('.WireTabs');
+	$("#submit_save, #Inputfield_submit").clone().appendTo('.WireTabs');
 
 	$(".ui-button-text:contains('Cancel')").parent('.ui-button').addClass('ui-button-cancel');
 
