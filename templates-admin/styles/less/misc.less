@@ -122,28 +122,34 @@ background: #0067a5;
 	margin-left: auto;
 	margin-right: auto;
 }
+.modalNoMod{
+	background: @grayLightest!important;
 
-body.modal.modalNoMod{
-	background: @grayLightest;
-	.footer,
-	.page-header{
-		display: none!important;
-	}
-	.container{
-		padding: 0;
-		.inner{
-			.border-radius(0);
-			.box-shadow(none);
+	body.modal{
+		background: @grayLightest!important;
+		.footer,
+		.page-header{
+			display: none!important;
+		}
+		.container{
+			padding: 0;
+			.inner{
+				.border-radius(0);
+				.box-shadow(none);
+			}
+		}
+	}	
+}
+.modalMod{
+	body.modal{
+		.nav-wrapper,
+		.footer p,
+		.nav-bread{
+			display: none!important;
 		}
 	}
 }
-body.modal.modalMod{
-	.nav-wrapper,
-	.footer p,
-	.nav-bread{
-		display: none!important;
-	}
-}
+
 
 // ---------------------------------------------------------------------------------
 // overrides ---------------------------------------------------------------------------------

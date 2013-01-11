@@ -20,6 +20,8 @@ $config->scripts->append($config->urls->adminTemplates . "scripts/main.js?v=2");
 $browserTitle = wire('processBrowserTitle');
 if(!$browserTitle) $browserTitle = __(strip_tags($page->get('title|name')), __FILE__) . ' &bull; ProcessWire';
 
+$modalMod = ($input->get->ab==1 ? ' modalMod' : ' modalNoMod');
+
 /*
  * Dynamic phrases that we want to be automatically translated
  *
@@ -35,7 +37,7 @@ if(!$browserTitle) $browserTitle = __(strip_tags($page->get('title|name')), __FI
 
 ?>
 <!DOCTYPE html>
-<html lang="<?php echo __('en', __FILE__); // HTML tag lang attribute
+<html class="<?php echo $modalMod; ?>" lang="<?php echo __('en', __FILE__); // HTML tag lang attribute
 	/* this intentionally on a separate line */ ?>">
 <head>
 	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
@@ -59,7 +61,7 @@ if(!$browserTitle) $browserTitle = __(strip_tags($page->get('title|name')), __FI
 			'templates' => $config->urls->templates,
 			'adminTemplates' => $config->urls->adminTemplates,
 			);
-		$modalMod = ($input->get->ab==1 ? ' modalMod' : ' modalNoMod');
+		
 		?>
 		var config = <?php echo json_encode($jsConfig); ?>;
 	</script>
@@ -67,7 +69,7 @@ if(!$browserTitle) $browserTitle = __(strip_tags($page->get('title|name')), __FI
 	<?php foreach($config->scripts->unique() as $file) echo "\n\t<script type='text/javascript' src='$file'></script>"; ?>
 </head>
 
-<body class="<?php if($bodyClass) echo $bodyClass; if ($user->isGuest()) echo 'login-body'; echo $modalMod;?>">
+<body class="<?php if($bodyClass) echo $bodyClass; if ($user->isGuest()) echo 'login-body';?>">
 	<div class='page-header'>
 		<?php if (!$user->isGuest()): ?>
 		<div class="nav-wrapper">
