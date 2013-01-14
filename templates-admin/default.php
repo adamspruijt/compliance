@@ -67,6 +67,12 @@ if ($input->get->modal==1) {
 	</script>
 	<?php foreach($config->styles->unique() as $file) echo "\n\t<link type='text/css' href='$file' rel='stylesheet' />"; ?>
 	<?php foreach($config->scripts->unique() as $file) echo "\n\t<script type='text/javascript' src='$file'></script>"; ?>
+	<!--[if IE]>
+		<link rel="stylesheet" type="text/css" href="<?php echo $config->urls->adminTemplates ?>styles/ie.css" />
+	<![endif]-->
+	<!--[if lte IE 8]>
+		<link rel="stylesheet" type="text/css" href="<?php echo $config->urls->adminTemplates ?>styles/ie8.css" />
+	<![endif]-->
 </head>
 
 <body class="<?php if($bodyClass) echo $bodyClass; if ($user->isGuest()) echo 'login-body';?>">
