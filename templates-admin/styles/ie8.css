@@ -1,19 +1,5 @@
-#ProcessPageSearchQuery {
-  line-height: 1.3em;
-  padding-left: 8px!important;
-  padding-right: 8px!important;
-}
-span.PageListNumChildren {
-  background: #eeeeee !important;
-}
-.PageListItem.PageListItemOpen span.PageListNumChildren {
-  background: #0769b5 !important;
-}
-.PageListActions li a:hover {
-  background: #0769b5 !important;
-  border-color: #05528e !important;
-  color: white !important;
-}
-.Inputfields .ui-widget-header {
-  padding-bottom: 0.6em;
-}
+#ProcessPageSearchQuery{padding-left:8px!important;padding-right:8px!important;}
+span.PageListNumChildren{background:#eee!important;}
+.PageListItem.PageListItemOpen span.PageListNumChildren{background:#0769b5 !important;}
+.PageListActions li a:hover{background:#0769b5 !important;border-color:#05528e !important;color:#fff!important;}
+.Inputfields .ui-widget-header{padding-bottom:0.6em;}

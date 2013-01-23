@@ -54,19 +54,28 @@ background: #0067a5;
 	right: @innerPadding!important;
 }
 
-
+.InputfieldPageAddButton,
 .ui-button,
 .ui-button.ui-state-default{
 	padding: 0.5em 0.8em;
+	cursor: pointer;
 	text-transform: uppercase;
 	.button();
 }
+.InputfieldPageAddButton:hover,
 .ui-button.ui-state-hover{
 	.button();
 	.buttonHover();
 }
+.InputfieldPageAddButton:active,
 .ui-button.ui-state-active{
 	.buttonOn();
+}
+.InputfieldPageAddButton{
+	.border-radius(2px);
+	padding: 0.3em 1em 0.3em 0.6em;
+	float: left;
+	margin: 1em 0;
 }
 
 .view-site{
@@ -229,8 +238,8 @@ table.AdminDataList td span.ui-icon{
 		margin: -150px 0 0 -150px;
 	}
 	.Inputfield,
-	ul.Inputfields #login_name,
-	ul.Inputfields #login_pass {
+	.Inputfields #login_name,
+	.Inputfields #login_pass {
 		width: 100%!important;
 	}
 }
