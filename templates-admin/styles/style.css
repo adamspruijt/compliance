@@ -621,6 +621,15 @@ textarea {
   box-shadow: 0 0 3px #008cff;
   background: white;
 }
+.Inputfields input:invalid,
+.Inputfields select:invalid,
+.Inputfields textarea:invalid {
+  /* reset */
+  border-color: #cc0000;
+  -webkit-box-shadow: 0 0 3px #cc0000;
+  -moz-box-shadow: 0 0 3px #cc0000;
+  box-shadow: 0 0 3px #cc0000;
+}
 .Inputfields,
 .Inputfields .Inputfield,
 .Inputfields label,
@@ -1083,6 +1092,7 @@ h2 + .Inputfields {
   border-radius: 8px;
   padding: 0!important;
   overflow: hidden;
+  z-index: 1000002!important;
 }
 .ui-dialog-buttonpane,
 .ui-dialog-titlebar {
@@ -1120,6 +1130,7 @@ h2 + .Inputfields {
 }
 .ui-widget-overlay {
   background: black;
+  z-index: 1000001!important;
 }
 .ui-sortable-helper {
   -webkit-box-shadow: 0 2px 9px rgba(0, 0, 0, 0.2);
@@ -1578,6 +1589,7 @@ table.AdminDataList td span.ui-icon {
 }
 #submit_publish,
 #submit_save,
+#submit_save_form_fields,
 #Inputfield_submit {
   color: white !important;
   text-shadow: -1px -1px 1px rgba(0, 0, 0, 0.3);
@@ -1595,6 +1607,7 @@ table.AdminDataList td span.ui-icon {
   float: right;
 }
 #submit_publish:hover,
+#submit_save_form_fields:hover,
 #submit_save:hover,
 #Inputfield_submit:hover {
   color: white !important;

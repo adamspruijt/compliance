@@ -51,6 +51,14 @@ textarea{
 	background: #fff;
 }
 
+.Inputfields input:invalid,
+.Inputfields select:invalid,
+.Inputfields textarea:invalid {
+	/* reset */
+	border-color: @error;
+	.box-shadow( 0 0 3px @error);
+}
+
 
 .Inputfields,
 .Inputfields .Inputfield,
