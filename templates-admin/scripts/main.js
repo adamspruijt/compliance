@@ -46,39 +46,6 @@ var ProcessWireAdminTheme = {
 	},
 
 	/**
-	 * Clone a button at the bottom to the top
-	 *
-	 */
-	setupCloneButton: function() {
-		// if there are buttons in the format "a button" without ID attributes, copy them into the masthead
-		// or buttons in the format button.head_button_clone with an ID attribute.
-		// var $buttons = $("#content a[id=] button[id=], #content button.head_button_clone[id!=]");
-		var $buttons = $("#content a:not([id]) button:not([id]), #content button.head_button_clone[id!=]");
-
-		// don't continue if no buttons here or if we're in IE
-		if($buttons.size() == 0 || $.browser.msie) return;
-
-		var $head = $("<div id='head_button'></div>").appendTo("#masthead .container").show();
-		$buttons.each(function() {
-			var $t = $(this);
-			var $a = $t.parent('a');
-			if($a.size()) {
-				$button = $t.parent('a').clone();
-				$head.append($button);
-			} else if($t.is('.head_button_clone')) {
-				$button = $t.clone();
-				$button.attr('data-from_id', $t.attr('id')).attr('id', $t.attr('id') + '_copy');
-				$a = $("<a></a>").attr('href', '#');
-				$button.click(function() {
-					$("#" + $(this).attr('data-from_id')).click(); // .parents('form').submit();
-					return false;
-				});
-				$head.append($a.append($button));
-			}
-		});
-	},
-
-	/**
 	 * Make buttons utilize the jQuery button state classes
 	 *
  	 */
@@ -95,6 +62,40 @@ var ProcessWireAdminTheme = {
 		// make buttons with <a> tags click to the href of the <a>
 		$("a > button").click(function() {
 			window.location = $(this).parent("a").attr('href');
+		});
+	},
+
+
+	/**
+	 * Clone a button at the bottom to the top
+	 *
+	 */
+	setupCloneButton: function() {
+		// if there are buttons in the format "a button" without ID attributes, copy them into the masthead
+		// or buttons in the format button.head_button_clone with an ID attribute.
+		// var $buttons = $("#content a[id=] button[id=], #content button.head_button_clone[id!=]");
+		var $buttons = $("#content a:not([id]) button:not([id]), #content button.head_button_clone[id!=]");
+
+		// don't continue if no buttons here or if we're in IE
+		if($buttons.size() == 0 || $.browser.msie) return;
+
+		var $head = $("<div id='head_button'></div>").appendTo("#head .title-container").show();
+		$buttons.each(function() {
+			var $t = $(this);
+			var $a = $t.parent('a');
+			if($a.size()) {
+				$button = $t.parent('a').clone();
+				$head.append($button);
+			} else if($t.is('.head_button_clone')) {
+				$button = $t.clone();
+				$button.attr('data-from_id', $t.attr('id')).attr('id', $t.attr('id') + '_copy');
+				$a = $("<a></a>").attr('href', '#');
+				$button.click(function() {
+					$("#" + $(this).attr('data-from_id')).click(); // .parents('form').submit();
+					return false;
+				});
+				$head.append($a.append($button));
+			}
 		});
 	},
 
@@ -118,7 +119,7 @@ var ProcessWireAdminTheme = {
 	browserCheck: function() {
 		if($.browser.msie && $.browser.version < 8){
 			$(".content .container").html("<h2>ProcessWire does not support IE7 and below at this time. Please try again with a newer browser.</h2>").show();
-			
+
 			$(".page-header").hide();
 		}
 
@@ -129,12 +130,6 @@ var ProcessWireAdminTheme = {
 
 $(document).ready(function() {
 	ProcessWireAdminTheme.init();
-
-	$("#submit_save, #Inputfield_submit").clone().appendTo('.WireTabs');
-
 	$(".ui-button-text:contains('Cancel')").parent('.ui-button').addClass('ui-button-cancel');
-
 	$("span.PageListNumChildren:empty").remove();
-
-
 });

@@ -15,7 +15,7 @@ if(!isset($content)) $content = '';
 $config->styles->prepend($config->urls->adminTemplates . "styles/style.css");
 $config->styles->prepend($config->urls->adminTemplates . "styles/jqui/jqui.css");
 $config->scripts->append($config->urls->adminTemplates . "scripts/inputfields.js");
-$config->scripts->append($config->urls->adminTemplates . "scripts/main.js?v=2");
+$config->scripts->append($config->urls->adminTemplates . "scripts/main.js?v=3");
 
 $browserTitle = wire('processBrowserTitle');
 if(!$browserTitle) $browserTitle = __(strip_tags($page->get('title|name')), __FILE__) . ' &bull; ProcessWire';
@@ -61,7 +61,7 @@ if ($input->get->modal==1) {
 			'templates' => $config->urls->templates,
 			'adminTemplates' => $config->urls->adminTemplates,
 			);
-		
+
 		?>
 		var config = <?php echo json_encode($jsConfig); ?>;
 	</script>
@@ -76,7 +76,7 @@ if ($input->get->modal==1) {
 </head>
 
 <body class="<?php if($bodyClass) echo $bodyClass; if ($user->isGuest()) echo 'login-body';?>">
-	<div class='page-header'>
+	<div  id="head" class='page-header'>
 		<?php if (!$user->isGuest()): ?>
 		<div class="nav-wrapper">
 			<div class="nav-bar">
@@ -123,7 +123,7 @@ if ($input->get->modal==1) {
 		<?php endif ?>
 
 
-		<div class="container">
+		<div class="container title-container">
 
 
 
@@ -155,7 +155,7 @@ if ($input->get->modal==1) {
 
 
 
-	<div class="content fouc_fix">
+	<div id="content" class="content fouc_fix">
 		<div class="container">
 			<div class="inner">
 
