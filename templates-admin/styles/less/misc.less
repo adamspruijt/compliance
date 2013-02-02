@@ -243,6 +243,17 @@ table.AdminDataList td span.ui-icon{
 		width: 100%!important;
 	}
 }
+#head #head_button{
+	float: right;
+	padding: 1.5em 0;
+	.ui-button{
+		.buttonDark()
+	}
+	.ui-button:hover{
+		.buttonDarkHover()
+	}
+}
+
 #submit_publish,
 #submit_publish_copy,
 #submit_save,
@@ -252,9 +263,13 @@ table.AdminDataList td span.ui-icon{
 	.buttonGo();
 	float: right;
 }
+#submit_publish_copy:hover,
 #submit_publish:hover,
+#submit_save_form_fields_copy:hover,
 #submit_save_form_fields:hover,
+#submit_save_copy:hover,
 #submit_save:hover,
+#Inputfield_submit_copy:hover,
 #Inputfield_submit:hover{
 	.buttonGoHover();
 	float: right;
@@ -276,7 +291,3 @@ table.AdminDataList td span.ui-icon{
 	text-shadow: none;
 }
 
-#head_button{
-	float: right;
-	padding: 1.5em 0;
-}
