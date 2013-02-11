@@ -100,6 +100,26 @@ var ProcessWireAdminTheme = {
 	},
 
 	/**
+	 * Make buttons utilize the jQuery button state classes
+	 *	
+ 	 */
+	setupButtonStates: function() {
+		// jQuery UI button states
+		$(".ui-button").hover(function() {
+			$(this).removeClass("ui-state-default").addClass("ui-state-hover");
+		}, function() {
+			$(this).removeClass("ui-state-hover").addClass("ui-state-default");
+		}).click(function() {
+			$(this).removeClass("ui-state-default").addClass("ui-state-active").effect('highlight', {}, 500); 
+		});
+
+		// make buttons with <a> tags click to the href of the <a>
+		$("a > button").click(function() {
+			window.location = $(this).parent("a").attr('href'); 
+		}); 
+	},
+
+	/**
 	 * Make the first field in any forum have focus, if it is a text field
 	 *
 	 */
@@ -122,8 +142,20 @@ var ProcessWireAdminTheme = {
 
 			$(".page-header").hide();
 		}
+	},
 
-	}
+	/**
+	 * Make the first field in any forum have focus, if it is a text field
+	 *
+	 */
+	setupFieldFocus: function() {
+		// add focus to the first text input, where applicable
+		jQuery('#content input[type=text]:visible:enabled:first:not(.hasDatepicker)').each(function() {
+			var $t = $(this); 
+			if(!$t.val() && !$t.is(".no_focus")) $t.focus();	
+		});
+
+	},
 
 };
 
