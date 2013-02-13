@@ -1,14 +1,16 @@
-.asmContainer{
-	.asmList .asmListItem.ui-state-hover{
-	    border-top: 1px dashed @grayLighter;
-	    border-bottom: 1px dashed @grayLighter;
+.ui-widget-content{
+	.ui-sortable{
+		li.ui-state-hover{
+			border-top: 1px dashed @grayLighter;
+	    	border-bottom: 1px dashed @grayLighter;
+		}
+		.ui-sortable-helper{
+		    .button();
+		    .border-radius(2px);
+		    border: 1px solid @grayLighter!important;
+		    .box-shadow(0 1px 6px rgba(0,0,0,.2));
+		}
+	}
 
-	}
-	.asmList .ui-sortable-helper{
-	    .button();
-	    .border-radius(2px);
-	    // border: 1px solid @grayLight!important;
-	    .box-shadow(0 1px 6px rgba(0,0,0,.2));
-	}
 }
 
