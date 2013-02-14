@@ -184,7 +184,7 @@ table.AdminDataList tr:hover td {
   color: #995c00;
   display: block;
   font-size: 0.9em;
-  margin: 0.2em 0 1em 0;
+  margin: 1em 0 1em 0;
   padding: 0.4em 0.7em;
   border: 1px solid #ffebcc;
   -webkit-border-radius: 2px;
@@ -254,7 +254,7 @@ table.AdminDataList tr:hover td {
   margin-left: -1px;
 }
 .nav-main a {
-  line-height: 2.7em;
+  line-height: 2.8em;
   display: block;
   font-weight: bold;
   font-family: Helvetica;
@@ -270,12 +270,7 @@ table.AdminDataList tr:hover td {
 }
 .nav-main .on {
   /* active: */
-  background: #157ee7;
-  background-image: -o-linear-gradient(90deg, #125aa3 0%, #125aa3 100%);
-  background-image: -moz-linear-gradient(90deg, #125aa3 0%, #125aa3 100%);
-  background-image: -webkit-linear-gradient(90deg, #125aa3 0%, #125aa3 100%);
-  background-image: -ms-linear-gradient(90deg, #125aa3 0%, #125aa3 100%);
-  background-image: linear-gradient(90deg, #125aa3 0%, #125aa3 100%);
+  background: #0067a5;
   -moz-box-shadow: inset 0px 0px 6px rgba(0, 0, 0, 0.28);
   -webkit-box-shadow: inset 0px 0px 6px rgba(0, 0, 0, 0.28);
   box-shadow: inset 0px 0px 6px rgba(0, 0, 0, 0.28);
@@ -980,39 +975,12 @@ h2 + .Inputfields {
   clear: both;
   padding-top: 1em;
 }
-.ui-widget-content .ui-sortable li.ui-state-hover {
-  border-top: 1px dashed #d7d7d7;
-  border-bottom: 1px dashed #d7d7d7;
-}
-.ui-widget-content .ui-sortable .ui-sortable-helper {
-  border-radius: 4px;
-  text-shadow: 1px 1px 1px white;
-  border: 1px solid #cecece;
-  -webkit-box-shadow: 0px 0px 2px white;
-  -moz-box-shadow: 0px 0px 2px white;
-  box-shadow: 0px 0px 2px white;
-  background: #fdfdfd;
-  background-color: #f0f0f0;
-  background-image: -moz-linear-gradient(top, #fdfdfd, #dddddd);
-  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#fdfdfd), to(#dddddd));
-  background-image: -webkit-linear-gradient(top, #fdfdfd, #dddddd);
-  background-image: -o-linear-gradient(top, #fdfdfd, #dddddd);
-  background-image: linear-gradient(to bottom, #fdfdfd, #dddddd);
-  background-repeat: repeat-x;
-  color: #555555;
-  -webkit-border-radius: 2px;
-  -moz-border-radius: 2px;
-  border-radius: 2px;
-  border: 1px solid #d7d7d7 !important;
-  -webkit-box-shadow: 0 1px 6px rgba(0, 0, 0, 0.2);
-  -moz-box-shadow: 0 1px 6px rgba(0, 0, 0, 0.2);
-  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.2);
-}
 .WireTabs {
   margin: -1.3em -1.3em 0 -1.3em !important;
   position: static!important;
   padding: 1.6em 1.3em;
   background: #eeeeee;
+  overflow: hidden;
   list-style: none!important;
   border-top: 1px solid white;
   border-bottom: 1px solid #e0e0e0;
@@ -1022,8 +990,7 @@ h2 + .Inputfields {
 }
 .WireTabs li {
   background: transparent!important;
-  line-height: 3em;
-  padding: 0 0.5em 0 0!important;
+  line-height: 1.3em;
 }
 .WireTabs em {
   border: none!important;
@@ -1047,8 +1014,10 @@ h2 + .Inputfields {
   background-repeat: repeat-x;
   color: #555555;
   border: 1px solid #cecece !important;
+  float: left;
   font-size: 1em;
   padding: 0.6em 0.9em;
+  margin: 0 0.6em 0 0;
 }
 .WireTabs a:hover {
   border-color: #008cff !important;
@@ -1064,6 +1033,10 @@ h2 + .Inputfields {
   -webkit-box-shadow: inset 0 0 5px #3375b3;
   -moz-box-shadow: inset 0 0 5px #3375b3;
   box-shadow: inset 0 0 5px #3375b3;
+}
+#_ProcessPageEditView {
+  float: right;
+  margin: 0;
 }
 /**********************************************************************************************
  * ProcessWire Admin Control Panel - Skyscraper Theme - ui.css
@@ -1140,6 +1113,34 @@ h2 + .Inputfields {
 .ui-widget-overlay {
   background: black;
   z-index: 1000001!important;
+}
+.ui-widget-content .ui-sortable li.ui-state-hover {
+  border-top: 1px dashed #d7d7d7;
+  border-bottom: 1px dashed #d7d7d7;
+}
+.ui-widget-content .ui-sortable .ui-sortable-helper {
+  border-radius: 4px;
+  text-shadow: 1px 1px 1px white;
+  border: 1px solid #cecece;
+  -webkit-box-shadow: 0px 0px 2px white;
+  -moz-box-shadow: 0px 0px 2px white;
+  box-shadow: 0px 0px 2px white;
+  background: #fdfdfd;
+  background-color: #f0f0f0;
+  background-image: -moz-linear-gradient(top, #fdfdfd, #dddddd);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#fdfdfd), to(#dddddd));
+  background-image: -webkit-linear-gradient(top, #fdfdfd, #dddddd);
+  background-image: -o-linear-gradient(top, #fdfdfd, #dddddd);
+  background-image: linear-gradient(to bottom, #fdfdfd, #dddddd);
+  background-repeat: repeat-x;
+  color: #555555;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  border-radius: 2px;
+  border: 1px solid #d7d7d7 !important;
+  -webkit-box-shadow: 0 1px 6px rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: 0 1px 6px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.2);
 }
 .ui-sortable-helper {
   -webkit-box-shadow: 0 2px 9px rgba(0, 0, 0, 0.2);
@@ -1331,9 +1332,9 @@ h1,
   float: right;
 }
 #ProcessPageSearchQuery {
-  padding: 0.4em 1em;
+  padding: 5px 1em;
   border: none;
-  margin: 0.1em 0;
+  margin: 3px 0;
   color: white;
   outline: none;
   opacity: 1!important;
