@@ -12,7 +12,7 @@ $searchForm = $user->hasPermission('page-edit') ? $modules->get('ProcessPageSear
 $bodyClass = $input->get->modal ? 'modal' : '';
 if(!isset($content)) $content = '';
 
-$config->styles->prepend($config->urls->adminTemplates . "styles/style.css");
+$config->styles->prepend($config->urls->adminTemplates . "styles/style.css?v=6");
 $config->styles->prepend($config->urls->adminTemplates . "styles/jqui/jqui.css");
 $config->scripts->append($config->urls->adminTemplates . "scripts/inputfields.js");
 $config->scripts->append($config->urls->adminTemplates . "scripts/main.js?v=3");
