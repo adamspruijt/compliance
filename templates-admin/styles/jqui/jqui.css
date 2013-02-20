@@ -181,13 +181,13 @@ button.ui-button::-moz-focus-inner { border: 0; padding: 0; } /* reset extra pad
 .ui-slider .ui-slider-handle { position: absolute; z-index: 2; width: 18px; height: 18px!important; cursor: default;}
 .ui-slider .ui-slider-range { position: absolute; z-index: 1; font-size: .7em; display: block; border: 0;}
 
-.ui-slider-horizontal { height: .8em; }
-.ui-slider-horizontal .ui-slider-handle { top: -.3em; margin-left: -.6em; }
+.ui-slider-horizontal { height: 11px; }
+.ui-slider-horizontal .ui-slider-handle { top: -5px; margin-left: -5px; }
 .ui-slider-horizontal .ui-slider-range { top: 0; height: 100%; }
 .ui-slider-horizontal .ui-slider-range-min { left: 0; }
 .ui-slider-horizontal .ui-slider-range-max { right: 0; }
 
-.ui-slider-vertical { width: .8em; height: 100px; }
+.ui-slider-vertical { width: 11px; height: 100px; }
 .ui-slider-vertical .ui-slider-handle { left: -.3em; margin-left: 0; margin-bottom: -.6em; }
 .ui-slider-vertical .ui-slider-range { left: 0; width: 100%; }
 .ui-slider-vertical .ui-slider-range-min { bottom: 0; }
@@ -477,7 +477,7 @@ body .ui-tooltip { border-width: 2px; }
 /* tossed this in here because it was crashing CodeKit and I didnt want to forget to uncomment it later */
 #PageIDIndicator+h2{
 	position: absolute;
-	top: 1.4em;
-	right: 1.9em;
+	top: 1.3em;
+	right: 5.5em;
 	margin: 0;
 }
