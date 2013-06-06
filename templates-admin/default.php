@@ -64,6 +64,10 @@ if ($input->get->modal==1) {
 
 		?>
 		var config = <?php echo json_encode($jsConfig); ?>;
+
+
+
+
 	</script>
 	<?php foreach($config->styles->unique() as $file) echo "\n\t<link type='text/css' href='$file' rel='stylesheet' />"; ?>
 	<?php foreach($config->scripts->unique() as $file) echo "\n\t<script type='text/javascript' src='$file'></script>"; ?>
@@ -83,7 +87,7 @@ if ($input->get->modal==1) {
 				<div class="container">
 					<ul class='nav-menu nav-main'>
 						<?php include($config->paths->adminTemplates . "topnav.inc"); ?>
-						<li class="view-site"><a id='sitelink' class="" href='<?php echo $config->urls->root; ?>'><?php echo __('View Site', __FILE__); ?></a></li>
+						
 
 						<li class='search-box'><?php echo tabIndent($searchForm, 3); ?></li>
 
@@ -101,7 +105,8 @@ if ($input->get->modal==1) {
 					?>
 
 			<?php if(!$user->isGuest()): ?>
-				<li class="fright"><a class='action' href='<?php echo $config->urls->admin; ?>login/logout/'><?php echo __('logout', __FILE__); ?></a></li>
+				<li class="fright"><a href='<?php echo $config->urls->root; ?>'><?php echo __('View Site', __FILE__); ?></a></li>
+				<li class="fright"><a class='action' href='<?php echo $config->urls->admin; ?>login/logout/'><?php echo __('logout', __FILE__); ?></a>&nbsp;//&nbsp;</li>
 
 				<li class="fright">
 				<?php if ($user->hasPermission('profile-edit')): ?>
@@ -114,7 +119,7 @@ if ($input->get->modal==1) {
 					</span>
 					&nbsp;//&nbsp;
 				</li>
-
+				
 			<?php endif; ?>
 				</ul>
 			</div>
@@ -124,26 +129,10 @@ if ($input->get->modal==1) {
 
 
 		<div class="container title-container">
-
-
-
-
-
 			<h1 id='title'>
 				<?php echo __(strip_tags($this->fuel->processHeadline ? $this->fuel->processHeadline : $page->get("title|name")), __FILE__); ?>
 			</h1>
 			<?php if(trim($page->summary)) echo "<h2 class='summary'>{$page->summary}</h2>"; ?>
-
-
-
-			<?php if(!$user->isGuest()): ?>
-
-
-
-			<?php endif; ?>
-
-
-
 		</div>
 		<div class="container">
 			<?php if(count($notices)) include($config->paths->adminTemplates . "notices.inc"); ?>
@@ -173,7 +162,6 @@ if ($input->get->modal==1) {
 		</p>
 		<?php if($config->debug && $this->user->isSuperuser()) include($config->paths->adminTemplates . "debug.inc"); ?>
 	</div>
-
 
 
 
